@@ -25,7 +25,7 @@ gem "simple_form"
 gem "title"
 gem "uglifier"
 gem "unicorn"
-gem 'pickadate-rails'
+gem "pickadate-rails"
 
 group :development do
   gem "spring"

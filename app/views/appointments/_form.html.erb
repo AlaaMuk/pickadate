@@ -1,0 +1,20 @@
+<%= simple_form_for(@appointment) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :test_date, label: "Schedule Date" %>
+    <input type="text" class="datepicker">
+
+    <%= f.input :test_time, label: "Schedule Time" %>
+    <input type="text" class="timepicker">
+
+    <%= f.input :test_appointment, as: :hidden %>
+
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+
+

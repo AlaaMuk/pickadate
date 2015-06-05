@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Test date:</strong>
+  <%= @appointment.test_date %>
+</p>
+
+<p>
+  <strong>Test time:</strong>
+  <%= @appointment.test_time %>
+</p>
+
+<%= link_to 'Edit', edit_appointment_path(@appointment) %> |
+<%= link_to 'Back', appointments_path %>

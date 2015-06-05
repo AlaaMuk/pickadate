@@ -1,0 +1,3 @@
+$('.timepicker').pickatime()
+
+$('.datepicker').pickadate()
