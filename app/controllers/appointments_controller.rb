@@ -56,11 +56,14 @@ class AppointmentsController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     def appointment_params
       ap step_one = params.require(:appointment).permit(:test_date, :test_time, :test_appointment)
-      step_one["test_appointment(1i)"] = step_one["test_date(1i)"]
-      step_one["test_appointment(2i)"] = step_one["test_date(2i)"]
-      step_one["test_appointment(3i)"] = step_one["test_date(3i)"]
-      step_one["test_appointment(4i)"] = step_one["test_time(4i)"]
-      step_one["test_appointment(5i)"] = step_one["test_time(5i)"]
+      date = Date.parse(step_one["test_date"])
+      time = Time.parse(step_one["test_time"])
+      step_one["test_appointment(1i)"] = date.strftime("%Y") #year
+      step_one["test_appointment(2i)"] = date.strftime("%m") #month
+      step_one["test_appointment(3i)"] = date.strftime("%e") #day
+      step_one["test_appointment(4i)"] = time.strftime("%I") #hour
+      step_one["test_appointment(5i)"] = time.strftime("%M") #minute
+      # step_one["test_appointment"].strftime("%m %e, %Y at %I:%M")
       step_one
     end
 end

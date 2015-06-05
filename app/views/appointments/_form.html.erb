@@ -2,11 +2,9 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :test_date, label: "Schedule Date" %>
-    <input type="text" class="datepicker">
 
-    <%= f.input :test_time, label: "Schedule Time" %>
-    <input type="text" class="timepicker">
+    <%= f.input :test_date, as: :string, label: "Schedule Date", input_html: { class: "datepicker"} %>
+    <%= f.input :test_time, as: :string, label: "Schedule Time", input_html: { class: "timepicker"} %>
 
     <%= f.input :test_appointment, as: :hidden %>
 
